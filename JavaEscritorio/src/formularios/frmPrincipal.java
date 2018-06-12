@@ -51,6 +51,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         mnuArchivo.setText("Archivo");
         mnuArchivo.setToolTipText("");
 
+        mnuArchivoClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aceptar.png"))); // NOI18N
         mnuArchivoClientes.setText("Clientes");
         mnuArchivo.add(mnuArchivoClientes);
 
