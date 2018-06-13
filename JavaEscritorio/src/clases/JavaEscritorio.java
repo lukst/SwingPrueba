@@ -8,6 +8,9 @@ public class JavaEscritorio {
         frmLogin miLogin = new frmLogin();
         miLogin.setLocationRelativeTo(null);
         miLogin.setVisible(true);
+        ConexionJavaOracle conectar = new ConexionJavaOracle();
+        conectar.conectarDB();
+        conectar.closeConnection();
     }
-    
+
 }
