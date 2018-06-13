@@ -27,6 +27,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dpnEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuArchivo = new javax.swing.JMenu();
         mnuArchivoClientes = new javax.swing.JMenuItem();
@@ -47,48 +48,83 @@ public class frmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Facturación");
 
+        dpnEscritorio.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout dpnEscritorioLayout = new javax.swing.GroupLayout(dpnEscritorio);
+        dpnEscritorio.setLayout(dpnEscritorioLayout);
+        dpnEscritorioLayout.setHorizontalGroup(
+            dpnEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 753, Short.MAX_VALUE)
+        );
+        dpnEscritorioLayout.setVerticalGroup(
+            dpnEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 506, Short.MAX_VALUE)
+        );
+
         mnuArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/archivo.png"))); // NOI18N
         mnuArchivo.setText("Archivo");
         mnuArchivo.setToolTipText("");
 
-        mnuArchivoClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aceptar.png"))); // NOI18N
+        mnuArchivoClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cliente.png"))); // NOI18N
         mnuArchivoClientes.setText("Clientes");
         mnuArchivo.add(mnuArchivoClientes);
 
+        mnuArchivoProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/producto.png"))); // NOI18N
         mnuArchivoProductos.setText("Productos");
         mnuArchivo.add(mnuArchivoProductos);
 
+        mnuArchivoUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios.png"))); // NOI18N
         mnuArchivoUsuarios.setText("Usuarios");
+        mnuArchivoUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuArchivoUsuariosActionPerformed(evt);
+            }
+        });
         mnuArchivo.add(mnuArchivoUsuarios);
         mnuArchivo.add(jSeparator1);
 
+        mnuArchivoCambioClave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/password.png"))); // NOI18N
         mnuArchivoCambioClave.setText("Cambio contraseña");
         mnuArchivo.add(mnuArchivoCambioClave);
 
+        mnuArchivoCambioUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cambiarUsuario.png"))); // NOI18N
         mnuArchivoCambioUsuario.setText("Cambio usuario");
         mnuArchivo.add(mnuArchivoCambioUsuario);
         mnuArchivo.add(jSeparator2);
 
+        mnuArchivoSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        mnuArchivoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         mnuArchivoSalir.setText("Salir");
+        mnuArchivoSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuArchivoSalirActionPerformed(evt);
+            }
+        });
         mnuArchivo.add(mnuArchivoSalir);
 
         jMenuBar1.add(mnuArchivo);
 
+        mnuMovimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/movimiento.png"))); // NOI18N
         mnuMovimientos.setText("Movimientos");
 
+        mnuMovimientosNuevaFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/factura.png"))); // NOI18N
         mnuMovimientosNuevaFactura.setText("Nueva Factura");
         mnuMovimientos.add(mnuMovimientosNuevaFactura);
 
+        mnuMovimientosReporteFacturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reporte.png"))); // NOI18N
         mnuMovimientosReporteFacturas.setText("Reporte Facturas");
         mnuMovimientos.add(mnuMovimientosReporteFacturas);
 
         jMenuBar1.add(mnuMovimientos);
 
+        mnuAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ayuda.png"))); // NOI18N
         mnuAyuda.setText("Ayuda");
 
+        mnuAyudaAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/informacion.png"))); // NOI18N
         mnuAyudaAcercaDe.setText("Acerca de");
         mnuAyuda.add(mnuAyudaAcercaDe);
 
+        mnuAyudaAyuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ayuda2.png"))); // NOI18N
         mnuAyudaAyuda.setText("Ayuda");
         mnuAyuda.add(mnuAyudaAyuda);
 
@@ -100,15 +136,25 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 753, Short.MAX_VALUE)
+            .addComponent(dpnEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 506, Short.MAX_VALUE)
+            .addComponent(dpnEscritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnuArchivoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArchivoUsuariosActionPerformed
+        frmUsuarios misUsuarios = new frmUsuarios();
+        dpnEscritorio.add(misUsuarios);
+        misUsuarios.show();
+    }//GEN-LAST:event_mnuArchivoUsuariosActionPerformed
+
+    private void mnuArchivoSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArchivoSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_mnuArchivoSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,6 +192,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane dpnEscritorio;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
